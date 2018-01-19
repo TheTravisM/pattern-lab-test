@@ -1,0 +1,144 @@
+/*------------------------------------*\
+  03 ELEMENTS: Unclassed HTML elements (Type selectors)
+\*------------------------------------*/
+
+/*
+ * Page.................Page-level styles (HTML element).
+ * Page.................Our extension of the inuitcss page module.
+ * Headings.............Heading styles
+ * Type.................Misc type styles
+ * Links................Hyperlink styles
+ * Lists................inuitcss list styles
+ * Images...............inuitcss images
+ * Quotes...............Styling for blockquotes, etc.
+ * Forms................Form element styling (e.g. LEGEND, LABEL).
+ * Tables...............Basic table styles
+ *
+ * H1-H6
+ * Basic links
+ * Lists
+ *
+ * Last layer wesee type selectors
+ * e.g.
+ * a {},
+ * blockquote {}
+ * ul {}
+ */
+
+/*------------------------------------*\
+    #BODY
+\*------------------------------------*/
+body {
+	background: $color-white;
+	//color: $color-gray-80;
+	font: 100%/1.5 $font;
+	font-size: 16px;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	text-size-adjust: 100%;
+	//min-height: 100vh;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+
+}
+html{
+	font-size: 50px;
+	overflow-y: scroll;
+}
+
+// Zero out margin and padding on most elements as base style
+
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, legend, label, table, header, footer, nav, section, figure {
+	margin: 0;
+	padding: 0;
+}
+
+// Display block as base for these elements
+
+header, footer, nav, section, article, hgroup, figure { display: block; }
+
+/*------------------------------------*\
+    #LISTS
+\*------------------------------------*/
+
+// Ordered/Unordered list base styles
+
+ol, ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+// Nested Unordered List
+
+// Definition list base styles
+
+dl {
+	overflow: hidden;
+//	margin: 0 0 $spacing-md;
+}
+
+// Terms/Names base styles
+
+dt { font-weight: bold; }
+
+// Definition list description base styles
+
+dd { margin-left: 0; }
+
+/*------------------------------------*\
+    #ANCHOR ELEMENTS
+\*------------------------------------*/
+a {
+//	color: $color-brand-blue;
+	text-decoration: none;
+	font-weight: 500;
+//	font-family: $font;
+    &:hover, &:focus{
+//		color: $color-link-hover;
+		text-decoration: underline;
+  }
+}
+
+
+/*------------------------------------*\
+    #MEDIA ELEMENTS
+\*------------------------------------*/
+/**
+ * Make media elements responsive
+ */
+img, video, object {
+	max-width: 100%;
+	height: auto;
+}
+
+/**
+ * Iframe base styles
+ */
+iframe {
+//	margin-bottom: $spacing-md;
+	border: none;
+}
+
+// Figure base styles
+
+figure { //	margin-bottom: $spacing-md;
+
+	 // Figure image base styles
+
+  img { //	margin-bottom: $spacing-md;
+  }
+}
+
+// Figure caption base styles
+
+figcaption { font-style: italic; }
+
+// Ensure IE 10+ scales SVG based on container width
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  img[src$=".svg"] {
+    width: 100%;
+  }
+}

@@ -1,0 +1,284 @@
+
+// TOOLS
+
+/*
+  * TOOLS
+  * Functions............inuitcss’ default functions.
+  * Mixins...............inuitcss’ default mixins.
+  * Mixins...............Our extension of inuitcss’ mixins.
+  * Responsive...........Responsive tooling (requires responsive settings).
+  * Aliases..............Aliases onto longer inuitcss variables and mixins.
+*/
+
+/*------------------------------------*\
+    #MIXINS
+\*------------------------------------*/
+// Media Query
+
+@mixin MQ($canvas) {
+  @if $canvas == S {
+   @media only screen and (min-width: $bp-small-2) { @content; }
+  }
+  @else if $canvas == M {
+   @media only screen and (min-width: $bp-med) { @content; }
+  }
+  @else if $canvas == L {
+   @media only screen and (min-width: $bp-large-2) { @content; }
+  }
+  @else if $canvas == XL {
+   @media only screen and (min-width: $bp-xl) { @content; }
+  }
+  @else if $canvas == maxL {
+   @media only screen and (max-width: $bp-large-2) { @content; }
+  }
+}
+
+/** CSS Transition Timing
+ *  Usage: @include transitionTiming(none);
+ */
+@mixin transitionTiming($duration, $timing-function, $delay, $property) {
+  transition-duration: $duration;
+  transition-timing-function: $timing-function;
+  transition-delay: $delay;
+  transition-property: $property;
+}
+
+/** CSS Appearance
+ *  Usage: @include appearance(none);
+ */
+@mixin appearance($appearance) {
+  // appearance: $appearance;
+  // -moz-appearance: $appearance;
+  // -ms-appearance: $appearance;
+  // -webkit-appearance: $appearance;
+}
+
+/** CSS Transition
+ *  Usage: @include transition(width,0.3s,ease-out);
+ */
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+     -moz-transition: $transition-property $transition-time $method;
+      -ms-transition: $transition-property $transition-time $method;
+       -o-transition: $transition-property $transition-time $method;
+          transition: $transition-property $transition-time $method;
+}
+
+
+/** Rem Unit font sizes with relative fallback http:/seesparkbox.com/foundry/scss_rem_mixin_now_with_a_better_fallback
+ *  Usage: @include font-size(1, large);
+ */
+@mixin font-size( $decimal-size, $keyword: null ) {
+  @if $keyword{ font-size: $keyword; }
+  @else { font-size: $decimal-size * $base-font-multiplier * 16px;}
+  font-size: $decimal-size * 1rem;
+}
+
+//BORDER BOTTOM
+
+@mixin borderBottom() {
+  border-bottom: 1px solid $color-gray-border;
+}
+
+
+/*------------------------------------*\
+    #PORTED FROM BURBON
+\*------------------------------------*/
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+/*------------------------------------*\
+    #CONTAINERS
+\*------------------------------------*/
+@mixin container-fullwidth {
+  max-width: $max-width;
+  padding: 0 $spacing-md;
+  margin: 0 auto;
+}
+
+/*------------------------------------*\
+    #Box-Sizing w/ BROWSER FALLBACKS
+\*------------------------------------*/
+@mixin box-sizing {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+       -o-box-sizing: border-box;
+          box-sizing: border-box;
+  *,*:before,*:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+  }
+}
+
+/*------------------------------------*\
+    #FLEXBOX w/ BROWSER FALLBACKS
+\*------------------------------------*/
+@mixin flexbox {
+  display: -webkit-box; // old
+  display: -moz-box; // old
+  display: -ms-flexbox; // ie
+  display: -webkit-flex; // new
+  display: flex; // new
+}
+
+@mixin flex-direction($direction) {
+  @if $direction == column {
+    -webkit-flex-direction: vertical;
+       -moz-flex-direction: vertical;
+        -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+            flex-direction: column;
+  }
+  @else {
+    -webkit-flex-direction: horizontal;
+       -moz-flex-direction: horizontal;
+        -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@mixin flex-flow($values) {
+  -webkit-flex-flow: $values;
+     -moz-flex-flow: $values;
+      -ms-flex-flow: $values;
+          flex-flow: $values;
+}
+
+@mixin flex-wrap($wrap) {
+  @if $wrap == wrap {
+    flex-wrap: wrap;
+  }
+  @else {
+    flex-wrap: nowrap;
+  }
+}
+
+// The 'flex' shorthand - applies to: flex items
+// <positive-number>, initial, auto, or none
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+     -moz-box-flex: $values;
+      -webkit-flex: $values;
+      	  -ms-flex: $values;
+  	          flex: $values;
+}
+
+@mixin justify-content($value) {
+
+  @if $value == "start" {
+    justify-content: flex-start;
+  } @else if $value == "end" {
+      justify-content: flex-end;
+  } @else if $value == "between" {
+      justify-content: space-between;
+  } @else if $value == "around" {
+      justify-content: space-around;
+  } @else if $value == "center" {
+      justify-content: center;
+  }
+}
+
+@mixin align-items($value) {
+
+  @if $value == "start" {
+    align-items: flex-start;
+  } @else if $value == "end" {
+    align-items: flex-end;
+  } @else if $value == "center" {
+    align-items: center;
+  } @else if $value == "baseline" {
+    align-items: baseline;
+  } @else if $value == "stretch" {
+    align-items: stretch;
+  }
+}
+
+
+/*------------------------------------*\
+    #(X,Y) Absolute Centering
+\*------------------------------------*/
+@mixin absolute-centering {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/*------------------------------------*\
+    #LIST CLEAR
+\*------------------------------------*/
+@mixin clear-list-styling {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  li {
+    margin: 0;
+  }
+}
+
+/* Keyframes for modal slide-down */
+@keyframes smooth-slide-down {
+  0% {
+    top: 30%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+
+  100% {
+    top: 100%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+/* Keyframes for modal slide-in */
+@keyframes smooth-slide {
+
+  0% {
+    top: 45%;
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+  99% {
+    transform: translate(-50%, -50%);
+  }
+  100% {
+   top: 50%;
+   transform: translate(-50%, -50%);
+   opacity: 1;
+  }
+}
+
+/* Keyframes for modal slide-out */
+@keyframes smooth-slide-out {
+  from {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+}
+/*------------------------------------*\
+    #Link Colors
+\*------------------------------------*/
+  @mixin linkColor($value: $white) {
+    color: $value;
+    &hover, &:active, &:visited {
+      color: $value;
+    }
+  }

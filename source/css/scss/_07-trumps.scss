@@ -1,0 +1,432 @@
+/*----------------------------------------*\
+
+    06 TRUMPS: Overides, Helpers, Utilities
+
+    * TRUMPS
+    * Clearfix.............I can’t believe we still need this in 2014.
+    * Widths...............Simple width helper classes.
+    * Widths-responsive....Polyfill for responsive width classes.
+    * Spacing..............Micro-level spacing.
+    * Show/hide............Helpers to show and side stuff.
+    * Type.................Utility classes for typography.
+
+  - Only affect onepiece of theDOM at a time
+  - Usually carry !important
+  - .products-list { }
+
+  Examples:
+    .u-one-half {
+      width: 50% !important;
+    }
+
+*/
+
+// TRUMPS: Helpers and overrides
+
+
+/*------------------------------------*\
+    #FONT HELPERS
+\*------------------------------------*/
+
+/* font weights */
+.u-font-weight-thin { font-weight: $font-thin; }
+
+.u-font-weight-light { font-weight: $font-regular; }
+
+.u-font-weight-semi { font-weight: $font-semi-bold; }
+
+.u-font-weight-bold { font-weight: $font-bold; }
+
+.u-font-uppercase { text-transform: uppercase; }
+
+
+/* font sizes */
+
+.u-font-size-xs { font-size: $font-size-xs; }
+
+.u-font-size-sm { font-size: $font-size-sm-2; }
+
+.u-font-size-md { font-size: $font-size-md; }
+
+.u-font-size-lg { font-size: $font-size-lg; }
+
+.u-font-size-xl { font-size: 4rem !important; }
+
+.u-font-light { font-weight: 300; }
+
+.u-font-regular { font-weight: 400; }
+
+.u-font-semibold { font-weight: 600; }
+
+.u-font-bold { font-weight: 700; }
+
+.u-font-italic { font-style: italic; }
+
+/* font colors */
+
+.u-color-brand-blue { color: $color-brand-blue; }
+
+.u-color-brand-green { color: $color-brand-green; }
+
+.u-color-black { color: $color-gray-80; }
+
+.u-color-green { color: $color-brand-green; }
+
+.u-color-blue { color: $color-brand-blue; }
+
+.u-color-lt-gray { color: $color-gray-75; }
+
+.u-color-gray-80 { color: $color-gray-80; }
+
+/* Wam Utilites */
+
+.u-color-wam-blue-dark { color: $color-wam-blue-dark; }
+
+.u-color-wam-blue-gray { color: $color-wam-blue-gray; }
+
+.u-color-wam-blue-slate { color: $color-wam-blue-slate; }
+
+.u-color-wam-blue-light { color: $color-wam-blue-light; }
+
+/*------------------------------------*\
+    #TEXT ALIGN
+\*------------------------------------*/
+.u-ta-center { text-align: center; }
+
+.u-ta-left { text-align: left; }
+
+.u-ta-right { text-align: right; }
+
+/*------------------------------------*\
+    #GRID
+\*------------------------------------*/
+// @import '../base/custom-media';
+
+.u-full {
+  width: 100% !important;
+  flex: none !important;
+}
+
+.u-1of2 {
+  width: 50% !important;
+  flex: none !important;
+}
+
+.u-1of3 {
+  width: 33.3333% !important;
+  flex: none !important;
+}
+
+.u-2of3 {
+  width: 66.6667% !important;
+  flex: none !important;
+}
+
+.u-1of4 {
+  width: 25% !important;
+  flex: none !important;
+}
+
+.u-3of4 {
+  width: 75% !important;
+  flex: none !important;
+}
+
+@media only screen and (min-width: $bp-small) {
+  .u-small-full {
+    width: 100% !important;
+    flex: none !important;
+  }
+
+  .u-small-1of2 {
+    width: 50% !important;
+    flex: none !important;
+  }
+
+  .u-small-1of3 {
+    width: 33.3333% !important;
+    flex: none !important;
+  }
+
+  .u-small-2of3 {
+    width: 66.6667% !important;
+    flex: none !important;
+  }
+
+  .u-small-1of4 {
+    width: 25% !important;
+    flex: none !important;
+  }
+
+  .u-small-3of4 {
+    width: 75% !important;
+    flex: none !important;
+  }
+}
+
+@media only screen and (min-width: $bp-med) {
+  .u-med-full {
+    width: 100% !important;
+    flex: none !important;
+  }
+
+  .u-med-1of2 {
+    width: 50% !important;
+    flex: none !important;
+  }
+
+  .u-med-1of3 {
+    width: 33.3333% !important;
+    flex: none !important;
+  }
+
+  .u-med-2of3 {
+    width: 66.6667% !important;
+    flex: none !important;
+  }
+
+  .u-med-1of4 {
+    width: 25% !important;
+    flex: none !important;
+  }
+
+  .u-med-3of4 {
+    width: 75% !important;
+    flex: none !important;
+  }
+}
+
+@media only screen and (min-width: $bp-large-2) {
+  .u-large-full {
+    width: 100% !important;
+    flex: none !important;
+  }
+
+  .u-large-1of2 {
+    width: 50% !important;
+    flex: none !important;
+  }
+
+  .u-large-1of3 {
+    width: 33.3333% !important;
+    flex: none !important;
+  }
+
+  .u-large-2of3 {
+    width: 66.6667% !important;
+    flex: none !important;
+  }
+
+  .u-large-1of4 {
+    width: 25% !important;
+    flex: none !important;
+  }
+
+  .u-large-3of4 {
+    width: 75% !important;
+    flex: none !important;
+  }
+}
+
+/*-------------------------------------*\
+	#TEXT DECORATION
+\*-------------------------------------*/
+.u-unlist{
+	margin-top: 0;
+	margin-bottom: 0;
+	list-style: none;
+	padding-left: 0;
+}
+
+/*-------------------------------------*\
+	#BORDER DECORATION
+\*-------------------------------------*/
+.u-border--bottom{
+	border-bottom: 1px solid $color-gray-border;
+  margin-bottom: -1px;
+}
+
+.u-border--right { border-right: 1px solid $color-gray-border; }
+
+/*-------------------------------------*\
+	#TABLE UTILITY
+\*-------------------------------------*/
+.u-table--middle {
+	display: table;
+	& > li {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
+/*-------------------------------------*\
+  #CONTENT BOX COLOR
+\*-------------------------------------*/
+.u-lt-blue { background-color: $color-blue-light; }
+
+.u-lt-green { background-color: $color-green-light; }
+
+.u-lt-gray { background-color: $color-gray-03; }
+
+// CHANGED
+.u-bg-lt-blue { background-color: $color-blue-light; }
+
+.u-bg-lt-green { background-color: $color-green-light; }
+
+.u-bg-lt-gray { background-color: $color-1; }
+
+.u-bg-white { background-color: $color-white; }
+
+.u-bg-transparent { background-color: transparent; }
+
+/* WAM - Background colors */
+
+.u-wam-bg-blue-dark { background-color: $color-wam-blue-dark; }
+
+.u-wam-bg-blue-gray { background-color: $color-wam-blue-gray; }
+
+.u-wam-bg-blue-slate { background-color: $color-wam-blue-slate;; }
+
+.u-wam-bg-blue-light { background-color: $color-wam-blue-light; }
+
+/*-------------------------------------*\
+	#FOCUS HOVER DECORATIONS
+\*-------------------------------------*/
+.u-focus--blue{
+	&:focus{
+		border-color: #66afe9;
+        transition-duration: 175ms;
+	}
+}
+
+/*-------------------------------------*\
+  #IMAGE ZOOM ELEMENT
+\*-------------------------------------*/
+.u-zoom {
+  overflow: hidden;
+  &__element {
+      transition: transform 0.35s;
+      &:hover {
+        transform: scale3d(1.05, 1.05, 1);
+      }
+  }
+}
+/*-------------------------------------*\
+  #SHOW/HIDE BASED ON WIDTH
+\*-------------------------------------*/
+.u-hidden {
+  display: none;
+
+  &\@sm{
+    display: none;
+
+    @include MQ(L){
+      display: inline-block;
+    }
+
+  }
+  &\@lg{
+    display: block;
+
+    @include MQ(L){
+      display: none;
+    }
+  }
+}
+
+/*-------------------------------------*\
+  #FLEXBOX
+\*-------------------------------------*/
+.u-flex {
+  display: flex;
+
+  &--center { justify-content: center; }
+
+  &--left { justify-content: flex-start; }
+
+  &--right { justify-content: flex-end; }
+
+  &--stretch { align-items: stretch; }
+
+  &--wrap { flex-wrap: wrap; }
+}
+
+.u-container--flex {
+  &\@lg {
+    width: 100%;
+    // padding: $spacing-md;
+    @include MQ(L) {
+      display: flex;
+      background-color: transparent;
+    }
+  }
+}
+/*-------------------------------------*\
+  #SPACING - PADDING
+\*-------------------------------------*/
+/* Small Spacing - 4px */
+.u-padding-global-xs { padding: $spacing-xs; }
+
+.u-padding-top-xs { padding-top: $spacing-xs; }
+
+.u-padding-right-xs { padding-right: $spacing-xs; }
+
+.u-padding-bottom-xs { padding-bottom: $spacing-xs; }
+
+.u-padding-left-xs { padding-left: $spacing-xs; }
+
+/* Small Spacing - 8px */
+
+.u-padding-global-sm { padding: $spacing-sm; }
+
+.u-padding-top-sm { padding-top: $spacing-sm; }
+
+.u-padding-right-sm { padding-right: $spacing-sm; }
+
+.u-padding-bottom-sm { padding-bottom: $spacing-sm; }
+
+.u-padding-left-sm { padding-left: $spacing-sm; }
+
+/* Medium Spacing - 16px */
+
+.u-padding-global-md { padding: $spacing-md; }
+
+.u-padding-top-md { padding-top: $spacing-md; }
+
+.u-padding-right-md { padding-right: $spacing-md; }
+
+.u-padding-bottom-md { padding-bottom: $spacing-md; }
+
+.u-padding-left-md { padding-left: $spacing-md; }
+
+/* Large Spacing - 24px */
+
+.u-padding-global-lg { padding: $spacing-lg; }
+
+.u-padding-top-lg { padding-top: $spacing-lg; }
+
+.u-padding-right-lg { padding-right: $spacing-lg; }
+
+.u-padding-bottom-lg { padding-bottom: $spacing-lg; }
+
+.u-padding-left-lg { padding-left: $spacing-lg; }
+
+/*-------------------------------------*\
+  #SPACING - MARGIN
+\*-------------------------------------*/
+
+.u-margin-bottom-lg { margin-bottom: $spacing-lg; }
+
+.u-margin {
+  &-bottom { margin-bottom: $spacing-md; }
+
+  &-top-md { margin-top: $spacing-md; }
+
+  &-right-md { margin-right: $spacing-md; }
+}
+
+.u-padding {
+  &-reset { padding: 0; }
+
+  &-bottom-xxl{ padding-bottom: $spacing-xxl; }
+}

@@ -1,0 +1,67 @@
+// SETTINGS: Global variables, config switches
+
+@import "scss/00-settings-colors";
+@import "scss/00-settings-iconography";
+@import "scss/00-settings-typeography";
+
+// - SETTINGS : Global variables, config switches
+// - Default..............inuitcss’ default settings.
+// - Global...............Globally-available variables and settings/config.
+// - Colors...............Manage our color palette in isolation.
+// - Responsive...........Set up and name our breakpoints.
+
+
+// SETTINGS: Global variables, config switches
+$max-width: 1200px;
+$full-width: 1440px;
+
+/*------------------------------------*\
+    #BREAKPOINTS
+\*------------------------------------*/
+$bp-small : 27em;                 // 432px
+$bp-small-2 : 29.75em;            // 476px
+$bp-small-3 : 39.8em;             // 636px
+$bp-med : 46.8em;                 // 748px
+$bp-med-2 : 48em;                 // 768px
+$bp-large : 50em;                 // 800px
+$bp-large-2 : 64.06em;           // 1025px
+$bp-xl : 73em;                    // 1168px
+$bp-xxl : 89em;                   // 1424px
+$bp-xxxl : 90em;                  // 1440px
+
+/*------------------------------------*\
+    #SPACING
+\*------------------------------------*/
+$base-spacing: .5rem;
+
+$spacing-xs: $base-spacing / 2;   // 4px
+$spacing-sm: $base-spacing;       // 8px
+$spacing-md: $base-spacing * 2;   // 16px
+$spacing-lg: $base-spacing * 3;   // 24px
+$spacing-xl: $base-spacing * 4;   // 32px
+$spacing-xxl: $base-spacing * 5;   // 40px
+
+// header size
+$header-height-S: 50px;
+$header-height-L: 86px;
+
+// Navigation size
+$nav-width-S: 260px;
+$nav-local-height-L: 44px;
+$header-nav-height-L: $header-height-L + $nav-local-height-L;
+
+// Search size
+$search-height-S: 50px;
+$search-height-L: 46px;
+
+/*------------------------------------*\
+    #Z-INDEX
+\*------------------------------------*/
+$below-content: 1;
+$content: 2;
+$above-content: 3;
+
+/*------------------------------------*\
+    #ANNIMATIONS & TRANSISTIONS
+\*------------------------------------*/
+$transition-speed-fast: 0.2s;

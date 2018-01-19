@@ -1,0 +1,51 @@
+/*------------------------------------*\
+    05 COMPONENTS: Designed components
+
+  * COMPONENTS
+  * Page-head............Page header styles.
+  * Bands................Full-width page bands.
+  * Promo................Lead promo blocks on the home page.
+  * Page-foot............Page footer styles.
+  * Page-micro...........Page copyright styles.
+  * Site-nav.............Site’s main nav area.
+  * Nav-secondary........Smaller, in-page nav.
+  * Buttons..............Extension of inuitcss’ buttons.
+  * Boxes................Extension of inuitcss’ box object
+  * Post.................Post-specific styles.
+  * Pull-quote...........Large, featured quotes.
+  * Annotate.............Pure CSS figure annotations.
+  * Ads..................AdPacks overrides.
+  * Forms................Form styles.
+  * Newsletter...........Styles specifically for newsletter signups.
+  * Video................Videos with aspect ratio.
+  * Footnotes............Article footnote styles
+
+  - Designedpieces of UI
+  - Still only using classes
+  - More explicitly named
+  - .products-list { }
+
+  Examples:
+    .c-products-list {
+      @include front-brand();
+      border-top: 1px solid $color-ui;
+    }
+
+    .c-products-list__item {
+      border-top: 1px solid $color-ui;
+    }
+
+*/
+
+// COMPONENTS: Designed components
+@import "scss/05-components-accordions";
+@import "scss/05-components-buttons";
+@import "scss/05-components-cards";
+@import "scss/05-components-footer";
+@import "scss/05-components-forms";
+@import "scss/05-components-header";
+@import "scss/05-components-inputs";
+@import "scss/05-components-links";
+@import "scss/05-components-modal";
+@import "scss/05-components-tabs";
+@import "scss/05-components-title";

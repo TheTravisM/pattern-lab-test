@@ -1,0 +1,214 @@
+/*
+
+Atomic design is philosophically complimentary with these CSS approaches:
+
+* SMACSS by Jonathan Snook http://smacss.com/
+* OOCSS by Nicole Sullivan http://oocss.org/
+* BEM CSS Methology : http://bem.info/method/
+* CSS Guidelines by Harry Roberts : https://github.com/csswizardry/CSS-Guidelines
+
+So feel free to use any of these approaches. Or don't. It's totally up to you.
+
+*/
+
+/*------------------------------------*\
+    $TABLE OF CONTENTS
+    based generally on Harry Roberts excellent CSS Guidelines https://github.com/csswizardry/CSS-Guidelines
+
+    * SETTINGS
+    * Default..............inuitcss’ default settings.
+    * Global...............Globally-available variables and settings/config.
+    * Colors...............Manage our color palette in isolation.
+    * Responsive...........Set up and name our breakpoints.
+    *
+    * TOOLS
+    * Functions............inuitcss’ default functions.
+    * Mixins...............inuitcss’ default mixins.
+    * Mixins...............Our extension of inuitcss’ mixins.
+    * Responsive...........Responsive tooling (requires responsive settings).
+    * Aliases..............Aliases onto longer inuitcss variables and mixins.
+    *
+    * GENERIC
+    * Normalize.css........A level playing field.
+    * Reset................A pared back reset to remove margins.
+    * Box-sizing...........Better default `box-sizing`.
+    * Shared...............Sensibly and tersely share global commonalities.
+    *
+    * BASE
+    * Page.................Page-level styles (HTML element).
+    * Page.................Our extension of the inuitcss page module.
+    * Headings.............Heading styles
+    * Type.................Misc type styles
+    * Links................Hyperlink styles
+    * Lists................inuitcss list styles
+    * Images...............inuitcss images
+    * Quotes...............Styling for blockquotes, etc.
+    * Forms................Form element styling (e.g. LEGEND, LABEL).
+    * Tables...............Basic table styles
+    *
+    * OBJECTS
+    * Wrappers.............Wrappers and page constraints.
+    * Buttons..............inuitcss’ buttons module.
+    * Layout...............inuitcss’ layout tool.
+    * Box..................inuitcss’ box object.
+    * Media................The media object.
+    * Flag.................The flag object.
+    * UI list..............inuitcss’ UI list.
+    *
+    * COMPONENTS
+    * Page-head............Page header styles.
+    * Bands................Full-width page bands.
+    * Promo................Lead promo blocks on the home page.
+    * Page-foot............Page footer styles.
+    * Page-micro...........Page copyright styles.
+    * Site-nav.............Site’s main nav area.
+    * Nav-secondary........Smaller, in-page nav.
+    * Buttons..............Extension of inuitcss’ buttons.
+    * Boxes................Extension of inuitcss’ box object
+    * Post.................Post-specific styles.
+    * Pull-quote...........Large, featured quotes.
+    * Annotate.............Pure CSS figure annotations.
+    * Ads..................AdPacks overrides.
+    * Forms................Form styles.
+    * Newsletter...........Styles specifically for newsletter signups.
+    * Video................Videos with aspect ratio.
+    * Footnotes............Article footnote styles
+    *
+    * SCOPES
+    * Post.................Styles scoped specifically to blog post pages
+    *
+    * TRUMPS
+    * Clearfix.............I can’t believe we still need this in 2014.
+    * Widths...............Simple width helper classes.
+    * Widths-responsive....Polyfill for responsive width classes.
+    * Spacing..............Micro-level spacing.
+    * Show/hide............Helpers to show and side stuff.
+    * Type.................Utility classes for typography.
+ */
+
+
+/*------------------------------------*\
+    $ABSTRACTS
+\*------------------------------------*/
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/variables";
+
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+@import "scss/base/body";
+@import "scss/base/animation";
+@import "scss/base/forms";
+@import "scss/base/global-classes";
+@import "scss/base/headings";
+@import "scss/base/links";
+@import "scss/base/lists";
+@import "scss/base/main";
+@import "scss/base/media";
+@import "scss/base/reset";
+@import "scss/base/tables";
+@import "scss/base/text";
+
+/*------------------------------------*\
+    $COMPONENTS
+\*------------------------------------*/
+@import "scss/components/blocks";
+//@import "scss/components/buttons";
+@import "scss/components/carousels";
+@import "scss/components/footer";
+@import "scss/components/footer-nav";
+@import "scss/components/forms";
+@import "scss/components/fields";
+@import "scss/components/header";
+@import "scss/components/logo";
+@import "scss/components/icons";
+@import "scss/components/lists";
+@import "scss/components/messaging";
+@import "scss/components/primary-nav";
+@import "scss/components/nav";
+@import "scss/components/page-header";
+@import "scss/components/sections";
+@import "scss/components/text";
+@import "scss/components/box";
+@import "scss/components/feedback";
+
+/*------------------------------------*\
+    $LAYOUT
+\*------------------------------------*/
+@import "scss/layout/layout";
+
+
+// Namespace (o-, c-, u-, t-, _-, js-, qa-) Reference : http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/
+// BEMIT: http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further
+// BEM: http://webdesign.tutsplus.com/articles/an-introduction-to-the-bem-methodology--cms-19403
+// ITCSS: https://www.youtube.com/watch?v=1OKZOV-iLj4- https://youtu.be/1OKZOV-iLj4?t=8m
+
+// SETTINGS
+// - SETTINGS : Global variables, config switches
+// - Default..............inuitcss’ default settings.
+// - Global...............Globally-available variables and settings/config.
+// - Colors...............Manage our color palette in isolation.
+// - Responsive...........Set up and name our breakpoints.
+@import "scss/00-settings";
+
+// TOOLS
+// - TOOLS: Default mixin and functions
+// - Functions............inuitcss’ default functions.
+// - Mixins...............inuitcss’ default mixins.
+// - Mixins...............Our extension of inuitcss’ mixins.
+// - Responsive...........Responsive tooling (requires responsive settings).
+// - Aliases..............Aliases onto longer inuitcss variables and mixins.
+@import "scss/01-tools";
+
+// GENERIC
+// - GENERIC: Ground-zero styles (normalize, resets, box-sizing)
+// - Normalize.css........A level playing field.
+// - Reset................A pared back reset to remove margins.
+// - Box-sizing...........Better default `box-sizing`.
+// - Shared...............Sensibly and tersely share global commonalities.
+@import "scss/02-generic";
+
+/* ELEMENTS:
+  * Unclassed HTML elements (Type selectors)
+  * Page.................Page-level styles (HTML element).
+  * Page.................Our extension of the inuitcss page module.
+  * Headings.............Heading styles
+  * Type.................Misc type styles
+  * Links................Hyperlink styles
+  * Lists................inuitcss list styles
+  * Images...............inuitcss images
+  * Quotes...............Styling for blockquotes, etc.
+  * Forms................Form element styling (e.g. LEGEND, LABEL).
+  * Tables...............Basic table styles
+*/
+@import "scss/03-elements";
+
+/*  OBJECTS:
+  * Cosmetic-free design patterns
+  * Wrappers.............Wrappers and page constraints.
+  * Buttons..............inuitcss’ buttons module.
+  * Layout...............inuitcss’ layout tool.
+  * Box..................inuitcss’ box object.
+  * Media................The media object.
+  * Flag.................The flag object.
+  * UI list..............inuitcss’ UI list.
+*/
+@import "scss/04-objects";
+
+// COMPONENTS: Designed components, chunks of UI
+@import "scss/05-components";
+
+// THEMES: Helpers and Overrides
+@import "scss/06-themes";
+
+// TRUMPS
+// - TRUMPS: Helpers and Overrides
+// - Clearfix.............I can’t believe we still need this in 2014.
+// - Widths...............Simple width helper classes.
+// - Widths-responsive....Polyfill for responsive width classes.
+// - Spacing..............Micro-level spacing.
+// - Show/hide............Helpers to show and side stuff.
+// - Type.................Utility classes for typography.
+@import "scss/07-trumps";
+
+
